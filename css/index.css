@@ -60,3 +60,11 @@ option {
     background-color: coral;
     border-radius: 6px;
 }
+
+#result {
+    display: none;
+    width: 350px;
+    margin: 0 auto;
+    background-color: rgb(53, 53, 53);
+    padding: 12px;
+}
