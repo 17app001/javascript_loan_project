@@ -7,11 +7,22 @@ const payment1El = document.querySelector("#payment1");
 const payment1E2 = document.querySelector("#payment2");
 const feeEl = document.querySelector("#fee");
 const calcEl = document.querySelector("#calc");
-const tableEl = document.querySelector("#table tbody");
+const tableEl = document.querySelector(".table-container table tbody");
+const resultEl = document.querySelector("#result");
+const resetEl = document.querySelector("#reset");
+
+
 console.log(tableEl, calcEl, amountEl, yearsEl, rateEl, payment1El, payment1E2, feeEl);
 
 
 calcEl.addEventListener("click", calcLoan);
+resetEl.addEventListener("click", clear);
+
+function clear() {
+    resultEl.style.display = "none";
+    tableEl.innerHTML = "";
+}
+
 
 function calcLoan() {
     let amount = amountEl.value * 10000;
@@ -35,7 +46,7 @@ function calcLoan() {
     console.log(amount, years, rate, fee, rule, totalAmount, totalInterest)
     document.querySelector(".totalAmount").innerText = totalAmount + (fee == 0 ? "" : "(含手續費)");
     document.querySelector(".totalInterest").innerText = totalInterest;
-    const resultEl = document.querySelector("#result");
+
     resultEl.style.display = "none";
     setTimeout(function () {
         resultEl.style.display = "block";

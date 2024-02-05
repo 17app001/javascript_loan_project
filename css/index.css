@@ -69,8 +69,15 @@ option {
     padding: 12px;
 }
 
-table {
+.table-container {
     width: 80%;
+    margin: 6px auto;
+    height: 800px; 
+    overflow-y: auto; 
+}
+
+table {
+    width: 100%;
     margin: 6px auto;
     border: 1px solid black;
     border-collapse: collapse;
